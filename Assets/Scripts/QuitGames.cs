@@ -1,15 +1,18 @@
 using UnityEngine;
 
-public class QuitGames : MonoBehaviour
+namespace KazukiJanken
 {
-    public void QuitGame()
+    public class QuitGames : MonoBehaviour
     {
-        // ゲームを終了する
-        Application.Quit();
+        public void QuitGame()
+        {
+            // ゲームを終了する
+            Application.Quit();
 
-        // UnityEditor上で実行している場合、エディタを停止する（ビルド実行時には無視される）
+            // UnityEditor上で実行している場合、エディタを停止する（ビルド実行時には無視される）
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
+            UnityEditor.EditorApplication.isPlaying = false;
 #endif
+        }
     }
 }
